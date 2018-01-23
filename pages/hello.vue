@@ -1,6 +1,16 @@
 <template>
-  <div>
-    <h1>Welcome!</h1>
-    <nuxt-link to="/about">About page</nuxt-link>
+  <div id="demo">
+    <p>{{message}}</p>
+    <input v-model="message">
   </div>
 </template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      message: 'hello world!'
+    }
+  }
+}
+</script>
