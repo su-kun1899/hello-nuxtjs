@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import fruits from '~/components/fruits'
+import Fruits from '~/components/Fruits'
 export default {
-  components: { fruits }
+  components: { Fruits }
 }
 </script>

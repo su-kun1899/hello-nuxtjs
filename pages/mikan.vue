@@ -3,9 +3,9 @@
 </template>
 
 <script>
-import mikan from '~/components/mikan'
+import Mikan from '~/components/Mikan'
 
 export default {
-  components: { mikan }
+  components: { Mikan }
 }
 </script>

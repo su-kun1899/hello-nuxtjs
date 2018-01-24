@@ -1,5 +1,5 @@
 import { mount } from 'vue-test-utils'
-import Mikan from '../components/mikan'
+import Mikan from '../../components/Mikan'
 
 // describeなくても書ける
 test('adds 1 + 2 to equal 3', () => {
