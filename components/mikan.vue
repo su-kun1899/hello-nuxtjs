@@ -14,6 +14,15 @@ export default {
     priceWithTax: function() {
       return this.price * 1.08
     }
+  },
+  methods: {
+    calcAmount: function(count) {
+      return this.price * count
+    },
+
+    calcAmountWithTax: function(count) {
+      return this.calcAmount(count) * 1.08
+    }
   }
 }
 </script>
