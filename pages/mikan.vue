@@ -1,5 +1,5 @@
 <template>
-  <mikan/>
+  <Mikan/>
 </template>
 
 <script>
