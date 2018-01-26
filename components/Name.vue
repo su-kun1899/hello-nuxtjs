@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>名前: {{name}}</p>
+    <p id="name">名前: {{name}}</p>
     <input v-model="name">
     <p id="message" v-show="!isValid">
       名前を入力して下さい。

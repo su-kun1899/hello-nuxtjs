@@ -3,7 +3,6 @@ import { mount } from 'vue-test-utils'
 import Name from '../../components/Name'
 
 describe('Name', () => {
-
   let nameWrapper
 
   beforeEach(() => {
@@ -14,15 +13,27 @@ describe('Name', () => {
     it('has empty name', () => {
       assert(nameWrapper.vm.name === '')
     })
-    
+
     it('is invalid', () => {
       assert(nameWrapper.vm.isValid === false)
     })
 
     it('renders message', () => {
       assert.ok(nameWrapper.contains('p#message'))
-      // const message = nameWrapper.find('p#message')
-      // assert.equal(message.html(), 'hogehoge')
+    })
+  })
+
+  describe('Taro', () => {
+    beforeEach(() => {
+      nameWrapper.vm.name = 'Taro'
+    })
+
+    it('renders name', () => {
+      assert.equal(nameWrapper.find('p#name').text(), '名前: Taro')
+    })
+
+    it("doesn't render message", () => {
+      assert(nameWrapper.contains('p#message') !== false)
     })
   })
 })
