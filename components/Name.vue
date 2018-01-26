@@ -2,7 +2,7 @@
   <div>
     <p>名前: {{name}}</p>
     <input v-model="name">
-    <p v-show="!isValid">
+    <p id="message" v-show="!isValid">
       名前を入力して下さい。
     </p>
   </div>
