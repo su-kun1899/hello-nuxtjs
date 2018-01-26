@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-bind:class="{'error':!isValid}">
     <p id="name">名前: {{name}}</p>
     <input v-model="name">
     <p id="message" v-show="!isValid">

@@ -3,13 +3,9 @@ import { mount } from 'vue-test-utils'
 import Name from '../../components/Name'
 
 describe('Name', () => {
-  let nameWrapper
-
-  beforeEach(() => {
-    nameWrapper = mount(Name)
-  })
-
   describe('初期表示', () => {
+    const nameWrapper = mount(Name)
+
     it('has empty name', () => {
       assert(nameWrapper.vm.name === '')
     })
@@ -21,19 +17,35 @@ describe('Name', () => {
     it('renders message', () => {
       assert.ok(nameWrapper.contains('p#message'))
     })
+
+    it('applies error class', () => {
+      const classes = nameWrapper.find('div').classes()
+      assert.equal(classes.length, 1)
+      assert.equal(classes[0], 'error')
+    })
   })
 
   describe('Taro', () => {
+    const nameWrapper = mount(Name)
+
     beforeEach(() => {
       nameWrapper.vm.name = 'Taro'
+    })
+
+    it('is valid', () => {
+      assert.ok(nameWrapper.vm.isValid)
     })
 
     it('renders name', () => {
       assert.equal(nameWrapper.find('p#name').text(), '名前: Taro')
     })
 
-    it("doesn't render message", () => {
-      assert(nameWrapper.contains('p#message') !== false)
+    it("doesn't show message", () => {
+      assert.ok(nameWrapper.find('p#message').hasStyle('display', 'none'))
+    })
+
+    it('remove error class', () => {
+      assert.equal(nameWrapper.find('div').classes().length, 0)
     })
   })
 })
