@@ -22,15 +22,15 @@ describe('Mikan', () => {
   })
 
   test('name is みかん', () => {
-    assert(wrapper.vm.name === 'みかん')
+    assert.equal(wrapper.vm.name, 'みかん')
   })
 
   test('price is 100', () => {
-    assert(wrapper.vm.price === 100)
+    assert.equal(wrapper.vm.price, 100)
   })
 
   test('priceWithTax is 108', () => {
-    assert(wrapper.vm.priceWithTax === 108)
+    assert(wrapper.vm.priceWithTax, 108)
   })
 })
 
@@ -43,10 +43,10 @@ describe('3 Mikans', () => {
   })
 
   test('calcAmount is 300', () => {
-    assert(wrapper.vm.calcAmount(count) === 300)
+    assert.equal(wrapper.vm.calcAmount(count), 300)
   })
 
   test('calcAmountWithTax is 300', () => {
-    assert(wrapper.vm.calcAmountWithTax(count) === 324)
+    assert.equal(wrapper.vm.calcAmountWithTax(count), 324)
   })
 })

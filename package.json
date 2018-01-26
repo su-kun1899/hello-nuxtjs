@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "test": "jest --coverage --verbose",
+    "test": "jest --verbose",
     "start-static": "http-server ./dist"
   },
   "dependencies": {
