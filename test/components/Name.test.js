@@ -23,6 +23,11 @@ describe('Name', () => {
       assert.equal(classes.length, 1)
       assert.equal(classes[0], 'error')
     })
+
+    it('applies border style', () => {
+      const rootDiv = nameWrapper.find('div')
+      assert.ok(rootDiv.hasStyle('border', '1px solid red'))
+    })
   })
 
   describe('Taro', () => {
@@ -46,6 +51,11 @@ describe('Name', () => {
 
     it('remove error class', () => {
       assert.equal(nameWrapper.find('div').classes().length, 0)
+    })
+
+    it('remove border style', () => {
+      const rootDiv = nameWrapper.find('div')
+      assert.equal(rootDiv.hasStyle('border', '1px'), false)
     })
   })
 })
