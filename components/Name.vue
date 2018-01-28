@@ -20,11 +20,15 @@
     <p>
       パラメータ: {{params}}
     </p>
+    <p>
+      props: {{query}}
+    </p>
   </div>
 </template>
 
 <script>
 export default {
+  props: ['query'],
   data: function() {
     return {
       name: '',

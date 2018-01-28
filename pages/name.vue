@@ -1,6 +1,6 @@
 <template>
   <div>
-  <Name/>
+  <Name v-bind="{'query':fuga}" />
   hoge: {{hoge}}
   fuga: {{fuga}}
   </div>
@@ -8,11 +8,15 @@
 
 <script>
 import Name from '~/components/Name'
+
+console.log(Name.data())
+
 export default {
   data: function() {
     return {
       hoge: 'aaa',
-      fuga: 'bbb'
+      fuga: 'bbb',
+      piyo: ''
     }
   },
   components: { Name },
