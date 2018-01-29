@@ -1,10 +1,14 @@
 <template>
   <div>
     <p>hoge: {{hoge}}</p>
+    <!-- <sample hogeFromPage='hello!' /> -->
+    <sample v-bind="{'hogeFromPage': hoge}" />
   </div>
 </template>
 
 <script>
+import sample from '~/components/Sample'
+
 export default {
   data: function() {
     return {
@@ -12,6 +16,7 @@ export default {
       hoge: 'default'
     }
   },
+  components: { sample },
   asyncData(context) {
     return {
       // asyncDataでreturnすると、dataにマージされる
